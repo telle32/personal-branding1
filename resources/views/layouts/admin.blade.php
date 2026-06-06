@@ -41,12 +41,22 @@
         table tbody td { background:var(--bg-card) !important;border-color:var(--border) !important;color:#ccc;vertical-align:middle;padding:.8rem 1rem; }
         table tbody tr:hover td { background:rgba(255,255,255,.04) !important; }
         .badge-cat { background:rgba(232,168,124,.15);color:var(--primary);font-size:.75rem;padding:.25rem .6rem;border-radius:20px; }
-        .form-control,.form-select,.form-check-input { background:var(--bg-card2);border:1px solid var(--border);color:#fff;border-radius:10px;padding:.7rem 1rem; }
+        .form-control,.form-select { background:var(--bg-card2);border:1px solid var(--border);color:#fff;border-radius:10px;padding:.7rem 1rem; }
+        .form-check-input { background:var(--bg-card2);border:1px solid var(--border);border-radius:4px;width:1.1em;height:1.1em;padding:0;cursor:pointer;transition:all .2s; }
+        .form-check-input:checked { background-color:var(--primary);border-color:var(--primary); }
+        .form-check-input:focus { box-shadow:0 0 0 3px rgba(232,168,124,.2);border-color:var(--primary); }
+        .form-check-input:checked[type=checkbox] { background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e"); }
         .form-control:focus,.form-select:focus { background:var(--bg-card2);border-color:var(--primary);color:#fff;box-shadow:0 0 0 3px rgba(232,168,124,.15); }
         .form-control::placeholder { color:#777;opacity:1; }
         .form-label { color:#ddd;font-weight:600;font-size:.85rem;margin-bottom:.4rem; }
         small, .text-muted { color:#999 !important; }
         .alert-success-adm { background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25d366;border-radius:12px;padding:.8rem 1.2rem;margin-bottom:1.5rem; }
+        .form-label-adm { color:#ddd;font-weight:600;font-size:.85rem;margin-bottom:.4rem;display:block; }
+        .form-control-adm { display:block;width:100%;background:var(--bg-card2);border:1px solid var(--border);color:#fff;border-radius:10px;padding:.7rem 1rem;font-family:'Outfit',sans-serif;font-size:.9rem;transition:border-color .2s; }
+        .form-control-adm:focus { outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(232,168,124,.15); }
+        .form-control-adm::placeholder { color:#666;opacity:1; }
+        textarea.form-control-adm { resize:vertical; }
+        :root { --bg-input:var(--bg-card2); --border-input:var(--border); }
         @media(max-width:768px){ .admin-sidebar{display:none;} .admin-main{margin-left:0;} }
     </style>
 </head>
@@ -60,9 +70,19 @@
 </div>
 
 <div class="admin-sidebar">
-    <a href="{{ route('admin.portfolio.index') }}" class="sidebar-link {{ request()->routeIs('admin.portfolio*') ? 'active' : '' }}">
+    <a href="{{ route('admin.portofolio.index') }}" class="sidebar-link {{ request()->routeIs('admin.portofolio*') ? 'active' : '' }}">
         <i class="bi bi-grid-3x3-gap-fill"></i> Portfolio
     </a>
+    <a href="{{ route('admin.testimonial.index') }}" class="sidebar-link {{ request()->routeIs('admin.testimonial*') ? 'active' : '' }}">
+        <i class="bi bi-chat-quote-fill"></i> Testimoni
+    </a>
+    <a href="{{ route('admin.skill.index') }}" class="sidebar-link {{ request()->routeIs('admin.skill*') ? 'active' : '' }}">
+        <i class="bi bi-lightning-fill"></i> Skill
+    </a>
+    <a href="{{ route('admin.service.index') }}" class="sidebar-link {{ request()->routeIs('admin.service*') ? 'active' : '' }}">
+        <i class="bi bi-tools"></i> Layanan
+    </a>
+    <hr style="border-color:var(--border);margin:.5rem 0;">
     <a href="{{ route('home') }}" class="sidebar-link">
         <i class="bi bi-house-fill"></i> Beranda Website
     </a>

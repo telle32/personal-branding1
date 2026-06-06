@@ -41,7 +41,7 @@ class PortfolioController extends Controller
 
         Portfolio::create($validated);
 
-        return redirect()->route('admin.portfolio.index')
+        return redirect()->route('admin.portofolio.index')
             ->with('success', 'Portfolio berhasil ditambahkan!');
     }
 
@@ -69,13 +69,16 @@ class PortfolioController extends Controller
             }
             $path = $request->file('image')->store('portfolios', 'public');
             $validated['image'] = $path;
+        } elseif ($request->boolean('delete_image') && $portfolio->image) {
+            Storage::disk('public')->delete($portfolio->image);
+            $validated['image'] = null;
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
 
         $portfolio->update($validated);
 
-        return redirect()->route('admin.portfolio.index')
+        return redirect()->route('admin.portofolio.index')
             ->with('success', 'Portfolio berhasil diperbarui!');
     }
 
@@ -86,7 +89,7 @@ class PortfolioController extends Controller
         }
         $portfolio->delete();
 
-        return redirect()->route('admin.portfolio.index')
+        return redirect()->route('admin.portofolio.index')
             ->with('success', 'Portfolio berhasil dihapus!');
     }
 }

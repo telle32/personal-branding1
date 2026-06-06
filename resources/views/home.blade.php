@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-4">
                         <div class="hero-stat">
-                            <div class="num">0+</div>
+                            <div class="num">3+</div>
                             <div class="label">Klien Puas</div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
                 <div class="hero-img-wrap mx-auto">
-                    <img src="{{ asset('src/ruri.jpg') }}" alt="Feno Zikrillah - Full Stack Developer" class="img-fluid">
+                    <img src="{{ asset('src/saya.jpg') }}" alt="Feno Zikrillah - Full Stack Developer" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -188,6 +188,38 @@
     </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="testi-heading">Testimoni</h2>
+            <p class="testi-subheading">Yang orang-orang rasakan.</p>
+        </div>
+        @if($testimonials->count())
+        <div class="row g-3 justify-content-center">
+            @foreach($testimonials as $testimonial)
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ ($loop->index % 3) * 100 }}">
+                <div class="testi-card">
+                    <p class="testi-text">&ldquo;{{ $testimonial->content }}&rdquo;</p>
+                    <div class="testi-author">
+                        <div class="testi-ava">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
+                        <div class="testi-name">{{ $testimonial->name }}</div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        @else
+        <div class="text-center py-4" data-aos="fade-up">
+            <div class="mb-3">
+                <i class="bi bi-chat-square-quote text-muted" style="font-size: 2.5rem; opacity: 0.5;"></i>
+            </div>
+            <p class="text-muted" style="font-size: 0.95rem; max-width: 400px; margin: 0 auto;">Belum ada testimoni. Anda dapat menambahkannya melalui dashboard admin.</p>
+        </div>
+        @endif
+    </div>
+</section>
+
 <!-- ═══ ABOUT ═══ -->
 <section id="about">
     <div class="container">
@@ -220,7 +252,6 @@
                     <a href="https://github.com/telle32" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
                     <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
                     <a href="https://twitter.com" target="_blank" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
                 </div>
                 <a href="https://wa.me/6281261820624?text=Halo%20Feno%2C%20saya%20ingin%20bekerja%20sama"
                    target="_blank" class="btn-whatsapp">
@@ -253,7 +284,6 @@
                     <div class="divider mb-4"></div>
                     <p style="color:var(--text-muted-custom);font-size:.85rem;margin-bottom:1rem;">Atau temukan saya di:</p>
                     <div class="social-links d-flex gap-3 justify-content-center">
-                        <a href="mailto:feno@example.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
                         <a href="https://github.com/telle32" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
                         <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="https://twitter.com" target="_blank" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>

@@ -258,26 +258,7 @@
         .portfolio-body h5 { font-weight: 700; margin-bottom: .5rem; }
         .portfolio-body p { color: var(--text-muted-custom); font-size: .85rem; line-height: 1.6; }
 
-        /* ── ABOUT / PROFILE ── */
-        .about-img-wrap {
-            position: relative;
-        }
-        .about-img-wrap img {
-            border-radius: 20px;
-            width: 100%;
-            box-shadow: 0 30px 80px rgba(0,0,0,.5);
-        }
-        .exp-badge {
-            position: absolute; bottom: -20px; right: -20px;
-            background: var(--primary);
-            color: #0d0d0d;
-            border-radius: 16px;
-            padding: 1rem 1.5rem;
-            text-align: center;
-            font-weight: 800;
-        }
-        .exp-badge .num { font-size: 2rem; line-height: 1; }
-
+        
         /* ── CONTACT / WHATSAPP ── */
         #contact { background: #111; }
         .contact-card {
@@ -305,23 +286,7 @@
             transition: all .3s; text-decoration: none;
         }
         .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,.4); color: #fff; }
-        .btn-whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; z-index: 999;
-            width: 60px; height: 60px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 1.6rem;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(37,211,102,.5);
-            transition: transform .3s;
-            animation: float-btn 3s ease-in-out infinite;
-        }
-        .btn-whatsapp-float:hover { transform: scale(1.15); color: #fff; }
-        @keyframes float-btn {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+
 
         /* ── FOOTER ── */
         footer {
@@ -333,28 +298,6 @@
             font-size: .85rem;
         }
 
-        /* ── ADMIN PANEL ── */
-        .admin-sidebar {
-            background: var(--bg-card);
-            border-right: 1px solid var(--border);
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-        .admin-sidebar .nav-link { color: var(--text-light) !important; border-radius: 10px; margin: 2px 0; }
-        .admin-sidebar .nav-link:hover, .admin-sidebar .nav-link.active { background: rgba(232,168,124,.12); color: var(--primary) !important; }
-        .admin-content { padding: 100px 2rem 2rem; }
-        .table-dark-custom { background: var(--bg-card); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
-        .table-dark-custom table { margin-bottom: 0; }
-        .table-dark-custom thead th { background: var(--bg-card2); color: var(--text-muted-custom); font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; border-color: var(--border); }
-        .table-dark-custom tbody td { border-color: var(--border); color: var(--text-light); vertical-align: middle; }
-        .form-control-dark, .form-select-dark {
-            background: var(--bg-card2); border: 1px solid var(--border);
-            color: #fff; border-radius: 10px; padding: .7rem 1rem;
-        }
-        .form-control-dark:focus, .form-select-dark:focus { background: var(--bg-card2); border-color: var(--primary); color: #fff; box-shadow: 0 0 0 3px rgba(232,168,124,.15); }
-        .card-dark { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; }
-        .badge-cat { background: rgba(232,168,124,.15); color: var(--primary); font-size: .75rem; padding: .3rem .7rem; border-radius: 20px; }
-
         /* ── FILTER TABS ── */
         .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
         .filter-btn {
@@ -364,6 +307,66 @@
             transition: all .3s;
         }
         .filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); color: #0d0d0d; }
+
+        /* ── TESTIMONIALS (minimalis) ── */
+        #testimonials { background: var(--bg-dark); }
+
+        .testi-heading {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: .4rem;
+        }
+        .testi-subheading {
+            font-size: .95rem;
+            color: var(--text-muted-custom);
+            margin-bottom: 0;
+        }
+
+        .testi-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: border-color .25s, box-shadow .25s;
+        }
+        .testi-card:hover {
+            border-color: rgba(232,168,124,.25);
+            box-shadow: 0 8px 30px rgba(0,0,0,.35);
+        }
+
+        .testi-text {
+            font-size: .92rem;
+            color: #c8c8c8;
+            line-height: 1.7;
+            margin: 0;
+            font-style: italic;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .testi-ava {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8a87c, #c9855a);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: .95rem; color: #1a1a1a;
+            flex-shrink: 0;
+        }
+        .testi-ava-img {
+            width: 40px; height: 40px;
+            border-radius: 50%; object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .testi-name { font-weight: 700; font-size: .9rem; color: #fff; line-height: 1.3; }
 
         /* ── MISC ── */
         .divider { height: 1px; background: var(--border); margin: 0; }
@@ -391,6 +394,7 @@
                 <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
             </ul>
@@ -404,11 +408,7 @@
 
 @yield('content')
 
-<!-- Floating WA Button -->
-<a href="https://wa.me/6281261820624?text=Halo%20Feno%2C%20saya%20tertarik%20dengan%20layanan%20Anda"
-   target="_blank" class="btn-whatsapp-float" title="Chat WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-</a>
+
 
 <!-- Footer -->
 <footer>
@@ -416,7 +416,7 @@
         <p class="mb-1">
             <span class="text-white fw-bold">Feno<span>.</span>dev</span>
         </p>
-        <p>© {{ date('Y') }} Feno Zikrillah. All rights reserved. Made with AI & Laravel</p>
+        <p>© {{ date('Y') }} Feno Zikrillah. All rights reserved. Made with Laravel</p>
         <div class="social-links mt-3 d-flex justify-content-center gap-2">
             <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
             <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>

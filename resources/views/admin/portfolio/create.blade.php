@@ -3,12 +3,12 @@
 
 @section('admin-content')
 <div class="d-flex align-items-center gap-3 mb-4">
-    <a href="{{ route('admin.portfolio.index') }}" style="color:var(--muted);text-decoration:none;font-size:1.2rem;"><i class="bi bi-arrow-left"></i></a>
+    <a href="{{ route('admin.portofolio.index') }}" style="color:var(--muted);text-decoration:none;font-size:1.2rem;"><i class="bi bi-arrow-left"></i></a>
     <h1 class="page-title mb-0">Tambah Portfolio Baru</h1>
 </div>
 
 <div class="card-dark" style="max-width:700px;">
-    <form action="{{ route('admin.portfolio.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.portofolio.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label class="form-label">Judul Proyek *</label>
@@ -60,7 +60,7 @@
             <button type="submit" class="btn-primary-adm">
                 <i class="bi bi-floppy me-1"></i> Simpan Portfolio
             </button>
-            <a href="{{ route('admin.portfolio.index') }}" style="color:var(--muted);text-decoration:none;align-self:center;font-size:.9rem;">Batal</a>
+            <a href="{{ route('admin.portofolio.index') }}" style="color:var(--muted);text-decoration:none;align-self:center;font-size:.9rem;">Batal</a>
         </div>
     </form>
 </div>

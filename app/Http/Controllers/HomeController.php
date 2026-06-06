@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Portfolio;
 use App\Models\Skill;
 use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,6 +23,11 @@ class HomeController extends Controller
             ->orderBy('order')
             ->get();
 
-        return view('home', compact('portfolios', 'skills', 'services'));
+        $testimonials = Testimonial::where('is_active', true)
+            ->orderBy('order')
+            ->get();
+
+        return view('home', compact('portfolios', 'skills', 'services', 'testimonials'));
     }
 }
+
