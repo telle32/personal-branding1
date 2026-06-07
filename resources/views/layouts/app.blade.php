@@ -418,7 +418,7 @@
         </p>
         <p>© {{ date('Y') }} Feno Zikrillah. All rights reserved. Made with Laravel</p>
         <div class="social-links mt-3 d-flex justify-content-center gap-2">
-            <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://github.com/telle32" target="_blank"><i class="bi bi-github"></i></a>
             <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
         </div>
