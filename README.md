@@ -6,12 +6,15 @@ Aplikasi web portfolio personal berbasis Laravel yang menampilkan profil, portof
 
 ## Teknologi yang Digunakan
 
-- **PHP** 8.x
-- **Laravel** 10.x
-- **MariaDB** 10.4.32 (via XAMPP)
-- **Bootstrap** 5.3.3
-- **Bootstrap Icons** 1.11.3
-- **AOS.js** 2.3.4
+| Teknologi | Versi |
+|-----------|-------|
+| PHP | 8.2.12 |
+| Laravel | 10.50.2 |
+| MariaDB | 10.4.32 |
+| XAMPP | 3.3.0 |
+| Bootstrap | 5.3.3 |
+| Bootstrap Icons | 1.11.3 |
+| AOS.js | 2.3.4 |
 
 ---
 
@@ -23,7 +26,7 @@ Aplikasi web portfolio personal berbasis Laravel yang menampilkan profil, portof
   - Testimoni (toggle aktif/nonaktif)
   - Skill (level progress bar)
   - Layanan (toggle aktif/nonaktif)
-- Filter portfolio berdasarkan kategori (tanpa reload)
+- Filter portfolio berdasarkan kategori (tanpa reload halaman)
 - Kontak via WhatsApp
 - Desain responsif & modern (dark theme)
 
@@ -32,7 +35,7 @@ Aplikasi web portfolio personal berbasis Laravel yang menampilkan profil, portof
 ## Cara Instalasi
 
 ### Prasyarat
-- XAMPP (PHP 8.x + MariaDB)
+- XAMPP 3.3.0 (PHP 8.2.12 + MariaDB 10.4.32)
 - Composer
 - Node.js & NPM
 
@@ -40,10 +43,10 @@ Aplikasi web portfolio personal berbasis Laravel yang menampilkan profil, portof
 
 ### Langkah Instalasi
 
-**1. Clone / Ekstrak project**
-```bash
-# Ekstrak file ZIP ke folder htdocs XAMPP atau lokasi yang diinginkan
-# Contoh: C:\xampp\htdocs\personal-branding
+**1. Ekstrak project**
+```
+Ekstrak file ZIP ke folder yang diinginkan
+Contoh: C:\xampp\htdocs\personal-branding
 ```
 
 **2. Install dependensi PHP**
@@ -61,7 +64,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-**5. Buat database**
+**5. Buat database & import**
 
 Buka **phpMyAdmin** (`http://localhost/phpmyadmin`) lalu:
 - Buat database baru bernama: `personal_branding`
@@ -84,7 +87,13 @@ DB_PASSWORD=
 php artisan storage:link
 ```
 
-**8. Jalankan aplikasi**
+**8. Install dependensi Node.js**
+```bash
+npm install
+npm run build
+```
+
+**9. Jalankan aplikasi**
 ```bash
 php artisan serve
 ```
@@ -97,7 +106,6 @@ Buka browser dan akses: **http://127.0.0.1:8000**
 
 URL Admin: `http://127.0.0.1:8000/admin/portofolio`
 
-Menu admin yang tersedia:
 | Menu | URL |
 |------|-----|
 | Portfolio | `/admin/portofolio` |
@@ -111,17 +119,20 @@ Menu admin yang tersedia:
 
 ```
 personal-branding/
-├── app/Http/Controllers/   ← Controller (Portfolio, Skill, Service, Testimonial)
-├── app/Models/             ← Model Eloquent
+├── app/
+│   ├── Http/Controllers/     ← HomeController, PortfolioController, dll
+│   └── Models/               ← Portfolio, Testimonial, Skill, Service
 ├── database/
-│   ├── migrations/         ← Struktur tabel database
-│   └── personal_branding.sql ← File export database (import ini!)
+│   ├── migrations/           ← Struktur tabel database
+│   └── personal_branding.sql ← File dump database (import ini!)
 ├── resources/views/
-│   ├── layouts/            ← Layout app & admin
-│   ├── home.blade.php      ← Halaman beranda
-│   └── admin/              ← View CRUD admin
-├── routes/web.php          ← Definisi semua route
-└── public/storage/         ← Gambar yang diupload
+│   ├── layouts/              ← Layout app.blade.php & admin.blade.php
+│   ├── home.blade.php        ← Halaman beranda
+│   └── admin/                ← View CRUD admin
+├── routes/
+│   └── web.php               ← Definisi semua route
+└── public/
+    └── storage/              ← Gambar yang diupload
 ```
 
 ---
